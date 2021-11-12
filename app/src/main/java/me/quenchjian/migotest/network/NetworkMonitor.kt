@@ -25,7 +25,9 @@ class NetworkMonitor @Inject constructor(@ApplicationContext context: Context) {
   }
 
   init {
-    val request = NetworkRequest.Builder().build()
+    val request = NetworkRequest.Builder()
+      .removeCapability(NetworkCapabilities.NET_CAPABILITY_NOT_VPN)
+      .build()
     connectManager.registerNetworkCallback(request, callback)
   }
 
@@ -47,19 +49,17 @@ class NetworkMonitor @Inject constructor(@ApplicationContext context: Context) {
 
   @RequiresApi(Build.VERSION_CODES.M)
   private fun checkConnectivity(capabilities: NetworkCapabilities?): Boolean {
-    val connected = capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) ?: false
+    val vpn = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_VPN) ?: false
     val wifi = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ?: false
-    val cellular = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ?: false
-    return (!connected && wifi) || (wifi && cellular)
+    return vpn && wifi
   }
 
   @Suppress("Deprecation")
   private fun checkConnectivityCompat(): Boolean {
     val info = connectManager.activeNetworkInfo
-    val connected = info?.isConnected ?: false
+    val vpn = info?.type == ConnectivityManager.TYPE_VPN
     val wifi = info?.type == ConnectivityManager.TYPE_WIFI
-    val cellular = info?.type == ConnectivityManager.TYPE_MOBILE
-    return (!connected && wifi) || (wifi && cellular)
+    return vpn && wifi
   }
 
   fun interface CapabilitiesChangeListener {
