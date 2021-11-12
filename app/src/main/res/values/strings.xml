@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MigoTest</string>
+    <string name="button_add_pass">add</string>
+    <string name="button_buy_pass">buy</string>
+    <string name="header_day_pass">Day Pass</string>
+    <string name="text_day_pass">%d Day Pass</string>
+    <string name="header_hour_pass">Hour Pass</string>
+    <string name="text_hour_pass">%d Hour Pass</string>
+    <string name="text_rp">Rp %.3f</string>
+    <string name="form_pass_title_day">Add Day Pass</string>
+    <string name="form_pass_title_hour">Add Hour Pass</string>
+    <string name="label_duration">Duration</string>
+    <string name="hint_duration">Input Duration</string>
+    <string name="error_duration_empty">Duration empty</string>
+    <string name="error_duration_invalid">Duration must be integer value</string>
+    <string name="label_rp">Rp</string>
+    <string name="hint_rp">Input rp</string>
+    <string name="error_rp_empty">Rp empty</string>
+    <string name="error_rp_invalid">Rp must be an number value</string>
+    <string name="text_pass_status">Status: %s</string>
+    <string name="text_pass_create">Create Date: %s</string>
+    <string name="text_pass_start">Start Date: %s</string>
+    <string name="text_pass_end">End Date: %s</string>
+    <string name="text_pass_status_inactivate">Inactivate</string>
+    <string name="text_pass_status_activate">Activate</string>
+    <string name="text_pass_status_expired">Expired</string>
+    <string name="error_message">Error: %s!!</string>
+</resources>

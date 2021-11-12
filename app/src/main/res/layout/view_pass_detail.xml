@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_pass_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_large">
+
+    <TextView
+        android:id="@+id/text_pass_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        tools:text="@string/text_pass_status" />
+
+    <TextView
+        android:id="@+id/text_pass_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="@string/text_pass_status" />
+
+    <TextView
+        android:id="@+id/text_pass_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="@string/text_pass_create" />
+
+    <TextView
+        android:id="@+id/text_pass_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="@string/text_pass_start" />
+
+    <TextView
+        android:id="@+id/text_pass_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="@string/text_pass_end" />
+</LinearLayout>
