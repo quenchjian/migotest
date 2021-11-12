@@ -24,6 +24,11 @@ class PassViewModel @Inject constructor(
   private val dayPasses = mutableListOf(PassItem(true, Pass.Type.DAY))
   private val hourPasses = mutableListOf(PassItem(true, Pass.Type.HOUR))
 
+  init {
+    fetchStatus()
+    fetchPass()
+  }
+
   fun fetchStatus() {
     loading as MutableLiveData
     error as MutableLiveData

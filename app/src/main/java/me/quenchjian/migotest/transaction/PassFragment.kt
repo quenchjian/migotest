@@ -43,12 +43,6 @@ class PassFragment : Fragment(R.layout.view_pass) {
     vm.subscribed.observe(viewLifecycleOwner) { adapter.replace(it) }
   }
 
-  override fun onStart() {
-    super.onStart()
-    vm.fetchStatus()
-    vm.fetchPass()
-  }
-
   override fun onDestroyView() {
     super.onDestroyView()
     binding = null
