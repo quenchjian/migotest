@@ -49,17 +49,13 @@ class NetworkMonitor @Inject constructor(@ApplicationContext context: Context) {
 
   @RequiresApi(Build.VERSION_CODES.M)
   private fun checkConnectivity(capabilities: NetworkCapabilities?): Boolean {
-    val vpn = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_VPN) ?: false
-    val wifi = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ?: false
-    return vpn && wifi
+    return capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_VPN) ?: false
   }
 
   @Suppress("Deprecation")
   private fun checkConnectivityCompat(): Boolean {
     val info = connectManager.activeNetworkInfo
-    val vpn = info?.type == ConnectivityManager.TYPE_VPN
-    val wifi = info?.type == ConnectivityManager.TYPE_WIFI
-    return vpn && wifi
+    return info?.type == ConnectivityManager.TYPE_VPN
   }
 
   fun interface CapabilitiesChangeListener {
